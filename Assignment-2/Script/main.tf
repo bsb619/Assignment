@@ -22,7 +22,7 @@ data "azurerm_subnet" "subnet" {
   virtual_network_name = data.azurerm_virtual_network.vnet.name
 }
 
-# create a network interface for the VM
+# creating a network interface for the VM
 resource "azurerm_network_interface" "nic" {
   name                = var.nic_name
   count               = var.vm_count
@@ -36,7 +36,7 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-# create a windows virtual machine
+# creating a windows virtual machine
 resource "azurerm_virtual_machine" "vm" {
   count                 = var.vm_count
   name                  = var.vm_name
